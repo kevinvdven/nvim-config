@@ -5,6 +5,9 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require("packer").startup(function(use)
+  -- Let Packer manage itself
+  use 'wbthomason/packer.nvim'
+
   -- Colorscheme
   use "ellisonleao/gruvbox.nvim"
 
@@ -12,6 +15,16 @@ return require("packer").startup(function(use)
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
+  }
+
+  -- Telescope
+  use {
+    "nvim-telescope/telescope.nvim", tag = "0.1.0",
+    requires = { 
+      { "nvim-lua/plenary.nvim" },
+      -- { "BurntSushi/ripgrep" },
+      -- { "sharkdp/fd" }
+    }
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
