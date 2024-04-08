@@ -11,9 +11,9 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import any extras modules here
     require("lazy").setup({{
-      require("./plugins/gruvbox"),
-      require("./plugins/treesitter"),
-      require("./plugins/telescope")
+      require("plugins/gruvbox"),
+      require("plugins/treesitter"),
+      require("plugins/telescope")
     }})
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     -- { import = "lazyvim.plugins.extras.lang.json" },
